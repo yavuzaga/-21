@@ -22,13 +22,13 @@
 	</header>
 	<main>
 		<section id="addplayer">
-			<article>
-			   <table>
+			<article class="height-100">
+			   
 			         <h2 align="center">Add player</h2>
-			       
-            <form id="formID">              <br />
+			     
+            <form id="formID">   
             <label>Vorname:</label><input class="width-50"type="text"size="20" maxlength="30 "name="vorname" /> <br />
-            <label>Nachname:</label><input class="width-50" type="text"size="20"maxlength="30"name="nachname"/>  <br />
+            <label>Nachname:</label><input class="width-50" type="text"size="20"maxlength="30"name="name"/>  <br />
 
             <label>Verein:</label><input class="width-50" type="text"size="20" maxlength="30 "name="verein" />  <br />
 
@@ -51,9 +51,18 @@
             </form>
 
                <br><button onclick="send()"type="button"name="Start"value="Startseite"> Senden</button>
-              </table>
+             
 
 			</article>
+			<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p style="color: red">Einige Eingaben sind fehlerhaft. Bitte überprüfen Sie ihre Eingaben</p>
+  </div>
+
+</div>
 
 		</section>
 		<!--<section>
