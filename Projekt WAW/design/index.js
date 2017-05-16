@@ -39,17 +39,18 @@
 	show = function(){
 		var modal = document.getElementById('myModal');
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
+//show the modal
     modal.style.display = "block";
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
+	//hide the modal
     modal.style.display = "none";
 }
 
@@ -63,7 +64,8 @@ window.onclick = function(event) {
 	
 	 send = function()
     {
-    var error = false;
+	   var error = false;
+	   console.log(JSON.stringify($('#formID').serialize()));
 	var notNumber = [];
 	var onlyNumber;
 	
@@ -76,11 +78,15 @@ window.onclick = function(event) {
 	var number = "input[name=number]";
 	var jahr = "input[name=jahr]";
 	for(var i =0; i < names.length; i++){
+		//take the values of the input fields and push it to the not number array
 		notNumber.push($(names[i]).val())
 	}
+	//iterate over notnumber array with the input values and test wheter it is a letter
 	for(var i =0; i < notNumber.length; i++){
+		//if no letter , then error
 		if(/^[a-z]+$/i.test(notNumber[i]) == false){
 			error = true;
+			//show modal
 			show();
 			break;
 		
@@ -88,12 +94,16 @@ window.onclick = function(event) {
  
 	}
 	if(!error) {
-		if(!($(number).val() <= 15 && (number).val() >=4)){
+		//if number  not between 15 and 4 then show modal
+		var datevalue = Date.parse($("input[name=jahr]").val().substring(4,0))
+		if(!($(number).val() <= 15 && $(number).val() >=4)){
 		 error = true;
 		 show();
 		 
 		}
-		 else if(!($(number).val() <= 2017 && (number).val() > 0)){
+		//if date not between 2017 and 0 then show modal
+		
+		 else if(!(datevalue <= Date.parse(2017) && datevalue > 0)){
 			 error = true;
 		 show();
 		 
@@ -104,14 +114,17 @@ window.onclick = function(event) {
 		
 		
 	
-        
+        //if there is no error
     if(!error){
+		//start xhr request
         $.ajax({
         url: 'http://188.166.165.74:13337/api/players',
         type: 'POST',
-        data : $('#formID').serialize(),
+   contentType: "application/json; charset=utf-8",   
+   //serialize the inpuut fields and convert to string
+   data : JSON.stringify($('#formID').serialize()),
         success: function(json) {
-            alert('all done', json);
+            alert('all done', JSON.stringify(json));
         }
 
 });
