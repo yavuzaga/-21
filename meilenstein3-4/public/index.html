@@ -1,0 +1,120 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <title>-21</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+  <link href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="design/index.css"/>
+  
+</head>
+
+<body>
+	<header>
+		<div>
+			<h1><span>-21</span> Basketball</h1>
+			<p>
+			<label><a href="home.html">Home</a></label><br />
+            <label><a href="#addplayer">addplayer</a></label>  <br />
+            <label><a href="players.html">players</a></label>  <br />
+            <label><a href="chat.html">Chat</a></label>  <br />
+
+			</p>
+		</div>
+	</header>
+	<main>
+		<section id="addplayer">
+			<article class="height-100">
+			   
+			         <h2 align="center">Add player</h2>
+			     
+            <form id="formID">   
+            <label>Vorname:</label><input class="width-50"type="text"size="20" maxlength="30 "name="vorname" /> <br />
+            <label>Nachname:</label><input class="width-50" type="text"size="20"maxlength="30"name="name"/>  <br />
+
+            <label>Verein:</label><input class="width-50" type="text"size="20" maxlength="30 "name="verein" />  <br />
+
+            <label>Headcoch:</label><input class="width-50" type="text"size="20" maxlength="30 "name="hcoach" />  <br />
+                <label>Assistant Coach:</label><input class="width-50" type="text"size="20" maxlength="30 "name="acoach" /><br />
+                <label>Aktiv:</label> <input type="checkbox" name="aktiv" value="ja"checked="checked"/> <input type="checkbox"name="aktiv" value="nein"/>Nein<br />
+
+          <label>Position:</label> <select name="position" size="1" class="width-50">
+                    <option value="Wing "> Wing</option>
+                    <option value="Guard"> Gurard</option>
+                    <option value="Small Forward"> Small Forward</option>
+                    <option value="Power Forward"> Power Forward</option>
+                    <option value="Center"> Center</option>
+                    </select>              <br />
+              <label>R&uuml;ckennummer:</label><input class="width-50" type="number"size="20" maxlength="40 "name="number"/><br /><label for="gebdat">Geburtsjahr:</label>
+              <input class="width-50" type="date" name="jahr" id="gebdat" size="20"/>         <br />
+                  <label>Favorit markieren:</label> <input type="checkbox"name="favorit"value="Dummi1"checked="checked"/>Dummi1 <input type="checkbox"name="favorit"value="Dummi2"/>Dummi2
+
+
+            </form>
+
+               <br><button onclick="send()"type="button"name="Start"value="Startseite"> Senden</button>
+             
+
+			</article>
+			<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p style="color: red">Einige Eingaben sind fehlerhaft. Bitte überprüfen Sie ihre Eingaben</p>
+  </div>
+
+</div>
+
+		</section>
+		<!--<section>
+			<article>
+				<figure>
+					<div class="icon icon-learn"></div>
+				</figure>
+				<h3>Learn to Code</h3>
+				<p>
+					Mit der Vorlesung zu Webanwendungen lernst du nicht nur wie man geile
+					Webseiten erstellt, sondern auch wie Du effizienter Arbeiten kannst mit entsprechenden Tools.
+				</p>
+			</article>
+			<article>
+				<figure>
+					<div class="icon icon-power"></div>
+				</figure>
+				<h3>Get Superpowers</h3>
+				<p>
+					Mit den Meilensteinen wirst Du durch Aufgaben geführt um so nach und nach eine
+					vollständige Webapplikation zu entwickeln.
+				</p>
+			</article>
+			<article>
+				<figure>
+					<div class="icon icon-help"></div>
+				</figure>
+				<h3>Help Others</h3>
+				<p>
+					Das wichtigste hierbei ist allerdings auch anderen zu helfen und sie zu unterstützen.
+			</article>
+			<article>
+				<figure>
+					<div class="icon icon-follow"></div>
+				</figure>
+				<h3>Follow Us</h3>
+				<p>
+					Falls du fragen hast, kannst du dich jederzeit an 
+					<a href="https://git.com/CodeKittey">@Codekittey</a>, wenden oder eine
+					Email schreiben: m.kraus@hs-mannheim.de
+				</p>
+			</article>
+		</section>-->
+	</main>
+	<footer>
+		<img src="img/nodschool.svg"/></a>
+	</footer>
+	<script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
+	<script src="design/index.js"></script>
+	<script src="../node_modules/es6/ES6.js"></script>
+
+</body>
+</html>
